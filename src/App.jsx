@@ -13,7 +13,7 @@ function App() {
   const [deploymentModalOpen, setDeploymentModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#07080e] text-slate-100 flex flex-col selection:bg-cyan-400 selection:text-black">
+    <div className="min-h-screen bg-[#FBF9F5] text-[#121316] flex flex-col selection:bg-[#EBDCB9] selection:text-[#121316]">
       {/* Executive Frosted Navigation */}
       <Navbar onOpenDeploymentModal={() => setDeploymentModalOpen(true)} />
 

@@ -7,7 +7,6 @@ import {
   Clock, 
   ShieldCheck, 
   Send, 
-  Zap, 
   Boxes, 
   Cpu, 
   Database, 
@@ -30,7 +29,7 @@ export default function ScopeEstimator() {
     {
       id: 'webgl',
       name: 'Interactive 3D WebGL / Three.js Element',
-      desc: 'Bespoke floating 3D geometry, interactive cursor physics & dynamic shaders',
+      desc: 'Bespoke 3D asset, interactive cursor physics & dynamic shaders',
       price: 12000,
       icon: Boxes,
       tag: 'High Conversion',
@@ -46,7 +45,7 @@ export default function ScopeEstimator() {
     {
       id: 'n8n',
       name: 'Automated n8n / Python Lead Scraper & CRM Sync',
-      desc: 'Instant WhatsApp / Telegram alerts + automated lead capture to Google Sheets/CRM',
+      desc: 'Instant WhatsApp / Telegram alerts + automated lead capture to CRM',
       price: 9500,
       icon: Cpu,
       tag: 'Hands-off',
@@ -85,8 +84,7 @@ export default function ScopeEstimator() {
     }
   };
 
-  // Calculations
-  const baseCost = 18000; // Base 1-page high-converting system
+  const baseCost = 18000;
   const perPageCost = 3500;
   
   const calculatedEstimate = useMemo(() => {
@@ -98,7 +96,6 @@ export default function ScopeEstimator() {
 
     const totalInr = baseCost + pagesCost + addonsCost;
     
-    // Timeline calculation
     let timelineDays = Math.max(5, Math.ceil(pageCount * 1.5) + (selectedAddonIds.length > 2 ? 3 : 1));
     if (selectedAddonIds.includes('sprint')) {
       timelineDays = Math.min(7, timelineDays);
@@ -125,13 +122,12 @@ export default function ScopeEstimator() {
     e.preventDefault();
     if (!clientEmail) return;
 
-    // Trigger celebration confetti
     try {
       confetti({
         particleCount: 100,
         spread: 70,
         origin: { y: 0.6 },
-        colors: ['#00f2fe', '#4facfe', '#ffd700', '#ffffff'],
+        colors: ['#D4B06A', '#B89047', '#121316', '#FBF9F5'],
       });
     } catch (err) {
       console.error(err);
@@ -150,24 +146,24 @@ export default function ScopeEstimator() {
   });
 
   return (
-    <section id="scope-estimator" className="relative py-24 bg-[#080b14] border-t border-white/5 overflow-hidden">
+    <section id="scope-estimator" className="relative py-24 bg-[#F5F1E8] border-t border-[#E8E2D5] overflow-hidden">
       {/* Background Ambience */}
-      <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-cyan-500/10 blur-[160px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-yellow-500/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-[#C5A059]/[0.05] blur-[160px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-[#B89047]/[0.04] blur-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono mb-4">
-            <Sliders className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFFFFF] border border-[#D4AF37]/30 text-[#8C6B28] text-xs font-mono mb-4 shadow-sm font-semibold">
+            <Sliders className="w-3.5 h-3.5 text-[#B89047]" />
             <span>INTERACTIVE SCOPE & COST ENGINE</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
+          <h2 className="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-[#121316] tracking-tight mb-4">
             Configure Your Custom System
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
-            No ambiguous estimates or hidden agency fees. Select your architecture needs and receive an instant, transparent quote with zero lock-in.
+          <p className="text-[#4B5161] text-base sm:text-lg">
+            No ambiguous estimates or hidden agency retainers. Select your architecture needs and receive an instant, transparent quote with zero lock-in.
           </p>
         </div>
 
@@ -178,21 +174,21 @@ export default function ScopeEstimator() {
           <div className="lg:col-span-7 space-y-6">
             
             {/* 1. Page Count Slider Card */}
-            <div className="p-6 sm:p-8 rounded-3xl glass-panel border border-white/10">
+            <div className="p-6 sm:p-8 rounded-3xl cream-card">
               <div className="flex items-center justify-between mb-4">
                 <div>
-                  <h3 className="text-base sm:text-lg font-bold text-white">
+                  <h3 className="font-serif-luxury text-xl font-bold text-[#121316]">
                     1. Website Page Count & Core Structure
                   </h3>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-[#707684]">
                     Includes ultra-fast Vite/React boilerplate, mobile responsive design, and free static cloud hosting setup.
                   </p>
                 </div>
                 <div className="text-right shrink-0">
-                  <span className="text-2xl sm:text-3xl font-black text-cyan-400 font-mono">
+                  <span className="font-serif-luxury text-3xl font-bold text-[#B89047]">
                     {pageCount}
                   </span>
-                  <span className="text-xs text-slate-400 font-mono block">Page{pageCount > 1 ? 's' : ''}</span>
+                  <span className="text-xs text-[#707684] font-mono block">Page{pageCount > 1 ? 's' : ''}</span>
                 </div>
               </div>
 
@@ -205,23 +201,23 @@ export default function ScopeEstimator() {
                   step="1"
                   value={pageCount}
                   onChange={(e) => setPageCount(parseInt(e.target.value))}
-                  className="w-full h-2.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
+                  className="w-full h-2.5 bg-[#E8E2D5] rounded-lg appearance-none cursor-pointer accent-[#B89047]"
                 />
-                <div className="flex justify-between text-[11px] font-mono text-slate-500">
+                <div className="flex justify-between text-[11px] font-mono text-[#707684]">
                   <span>1 Page (High-Converting Landing)</span>
                   <span>5 Pages (Standard Brand)</span>
-                  <span>15+ Pages (Enterprise Web Portal)</span>
+                  <span>15+ Pages (Enterprise Portal)</span>
                 </div>
               </div>
             </div>
 
-            {/* 2. Optional Architectural Modules (Toggles) */}
-            <div className="p-6 sm:p-8 rounded-3xl glass-panel border border-white/10">
+            {/* 2. Optional Architectural Modules */}
+            <div className="p-6 sm:p-8 rounded-3xl cream-card">
               <div className="mb-6">
-                <h3 className="text-base sm:text-lg font-bold text-white mb-1">
+                <h3 className="font-serif-luxury text-xl font-bold text-[#121316] mb-1">
                   2. Select High-Throughput Power Modules
                 </h3>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-[#707684]">
                   Click to add or remove specialized modules built specifically for your revenue pipeline.
                 </p>
               </div>
@@ -237,47 +233,47 @@ export default function ScopeEstimator() {
                       onClick={() => toggleAddon(addon.id)}
                       className={`p-4 rounded-2xl cursor-pointer transition-all duration-200 border flex flex-col justify-between ${
                         isSelected
-                          ? 'bg-[#10172e] border-cyan-400/60 shadow-lg shadow-cyan-500/10'
-                          : 'bg-[#0a0d17]/80 border-white/5 hover:border-white/15 hover:bg-[#0e1220]'
+                          ? 'bg-[#FFFFFF] border-[#B89047] shadow-sm shadow-[#B89047]/15 ring-1 ring-[#B89047]'
+                          : 'bg-[#FAF7F2] border-[#E8E2D5] hover:border-[#D4AF37]/50 hover:bg-[#FFFFFF]'
                       }`}
                     >
                       <div>
                         <div className="flex items-center justify-between mb-2">
                           <div className={`p-2 rounded-xl border ${
                             isSelected 
-                              ? 'bg-cyan-950 text-cyan-300 border-cyan-500/30' 
-                              : 'bg-slate-900 text-slate-400 border-white/10'
+                              ? 'bg-[#F7F2E7] text-[#8C6B28] border-[#D4AF37]/40' 
+                              : 'bg-[#FAF7F2] text-[#707684] border-[#E8E2D5]'
                           }`}>
                             <Icon className="w-4 h-4" />
                           </div>
                           
                           <div className="flex items-center gap-1.5">
-                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-slate-400">
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#FFFFFF] border border-[#E8E2D5] text-[#707684]">
                               {addon.tag}
                             </span>
                             <div className={`w-5 h-5 rounded-md flex items-center justify-center border transition-colors ${
                               isSelected
-                                ? 'bg-cyan-400 border-cyan-400 text-black'
-                                : 'border-white/20 bg-black/40'
+                                ? 'bg-[#B89047] border-[#B89047] text-white'
+                                : 'border-[#D8D1C3] bg-white'
                             }`}>
                               {isSelected && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                             </div>
                           </div>
                         </div>
 
-                        <h4 className="text-xs font-bold text-white mb-1 leading-snug">
+                        <h4 className="text-xs font-bold text-[#121316] mb-1 leading-snug">
                           {addon.name}
                         </h4>
-                        <p className="text-[11px] text-slate-400 leading-relaxed mb-3">
+                        <p className="text-[11px] text-[#707684] leading-relaxed mb-3">
                           {addon.desc}
                         </p>
                       </div>
 
-                      <div className="pt-2 border-t border-white/5 flex items-center justify-between text-xs font-mono font-semibold">
-                        <span className={isSelected ? 'text-cyan-300' : 'text-slate-400'}>
+                      <div className="pt-2 border-t border-[#E8E2D5] flex items-center justify-between text-xs font-mono font-semibold">
+                        <span className={isSelected ? 'text-[#8C6B28]' : 'text-[#707684]'}>
                           +{formatINR(addon.price)}
                         </span>
-                        <span className="text-[10px] text-slate-500">
+                        <span className="text-[10px] text-[#A0A5B1]">
                           (~{formatUSD(addon.price)})
                         </span>
                       </div>
@@ -287,15 +283,15 @@ export default function ScopeEstimator() {
               </div>
             </div>
 
-            {/* Optional Business Name Input for Personalization */}
-            <div className="p-4 rounded-2xl bg-[#0a0d17] border border-white/10 flex flex-col sm:flex-row items-center gap-3">
-              <span className="text-xs font-mono text-slate-400 shrink-0">Company / Brand Name:</span>
+            {/* Company / Brand Name Input */}
+            <div className="p-4 rounded-2xl cream-card flex flex-col sm:flex-row items-center gap-3">
+              <span className="text-xs font-mono text-[#707684] shrink-0 font-medium">Company / Brand Name:</span>
               <input
                 type="text"
                 placeholder="e.g. Acme Capital, DLF Realty, Nova Tech"
                 value={businessName}
                 onChange={(e) => setBusinessName(e.target.value)}
-                className="w-full bg-[#121626] border border-white/10 rounded-xl px-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
+                className="w-full bg-[#FAF7F2] border border-[#E8E2D5] rounded-xl px-3.5 py-2 text-xs text-[#121316] placeholder-[#A0A5B1] focus:outline-none focus:border-[#B89047]"
               />
             </div>
 
@@ -303,59 +299,59 @@ export default function ScopeEstimator() {
 
           {/* Right Column: Live Dynamic Quote Summary & CTAs */}
           <div className="lg:col-span-5 sticky top-28">
-            <div className="rounded-3xl glass-panel border border-cyan-500/30 p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+            <div className="rounded-3xl cream-card p-6 sm:p-8 shadow-sm relative overflow-hidden">
               
               {/* Top ambient badge */}
-              <div className="flex items-center justify-between pb-4 mb-6 border-b border-white/10">
+              <div className="flex items-center justify-between pb-4 mb-6 border-b border-[#E8E2D5]">
                 <div className="flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-cyan-400" />
-                  <span className="text-xs font-mono text-slate-300">ESTIMATED INVESTMENT</span>
+                  <Sparkles className="w-4 h-4 text-[#B89047]" />
+                  <span className="text-xs font-mono text-[#707684]">ESTIMATED INVESTMENT</span>
                 </div>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/30">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">
                   Fixed Price • Guaranteed
                 </span>
               </div>
 
               {/* Real-time Display */}
               <div className="mb-6">
-                <div className="text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">
+                <div className="text-[11px] font-mono uppercase tracking-wider text-[#707684] mb-1">
                   Estimated Total
                 </div>
-                <div className="text-4xl sm:text-5xl font-black text-white tracking-tight mb-1 text-gradient-cyan">
+                <div className="font-serif-luxury text-4xl sm:text-5xl font-bold text-[#121316] tracking-tight mb-1">
                   {calculatedEstimate.formattedInr}
                 </div>
-                <div className="text-sm font-mono text-slate-400 flex items-center gap-2">
+                <div className="text-sm font-mono text-[#8C6B28] flex items-center gap-2">
                   <span>Approx. {calculatedEstimate.formattedUsd}</span>
                   <span>•</span>
-                  <span>Zero hidden costs</span>
+                  <span>Zero hidden retainers</span>
                 </div>
               </div>
 
               {/* Delivery Speed / Timeline */}
-              <div className="p-4 rounded-2xl bg-[#0a0d18] border border-white/10 mb-6 flex items-center justify-between">
+              <div className="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E8E2D5] mb-6 flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
-                  <Clock className="w-4 h-4 text-yellow-400" />
+                  <Clock className="w-4 h-4 text-[#B89047]" />
                   <div>
-                    <span className="text-xs font-semibold text-white block">Projected Sprint Delivery</span>
-                    <span className="text-[11px] text-slate-400">Direct founder-led execution</span>
+                    <span className="text-xs font-semibold text-[#121316] block">Projected Sprint Delivery</span>
+                    <span className="text-[11px] text-[#707684]">Direct founder-led execution</span>
                   </div>
                 </div>
-                <span className="text-xs font-mono font-bold text-yellow-300 bg-yellow-950/60 px-2.5 py-1 rounded border border-yellow-500/30">
+                <span className="text-xs font-mono font-bold text-[#8C6B28] bg-[#F7F2E7] px-2.5 py-1 rounded border border-[#D4AF37]/30">
                   {calculatedEstimate.timeline}
                 </span>
               </div>
 
               {/* Breakdown List */}
-              <div className="space-y-2 mb-8 text-xs font-mono border-t border-b border-white/10 py-4">
-                <div className="flex justify-between text-slate-300">
-                  <span>Core Vite + React Architecture ({pageCount} Pages):</span>
-                  <span className="text-white font-semibold">
+              <div className="space-y-2 mb-8 text-xs font-mono border-t border-b border-[#E8E2D5] py-4">
+                <div className="flex justify-between text-[#4B5161]">
+                  <span>Core Architecture ({pageCount} Pages):</span>
+                  <span className="text-[#121316] font-semibold">
                     {formatINR(baseCost + (pageCount - 1) * perPageCost)}
                   </span>
                 </div>
-                <div className="flex justify-between text-slate-300">
+                <div className="flex justify-between text-[#4B5161]">
                   <span>Selected Power Modules ({selectedAddonIds.length}):</span>
-                  <span className="text-white font-semibold">
+                  <span className="text-[#121316] font-semibold">
                     {formatINR(
                       selectedAddonIds.reduce((sum, id) => {
                         const addon = ADDONS.find((a) => a.id === id);
@@ -364,7 +360,7 @@ export default function ScopeEstimator() {
                     )}
                   </span>
                 </div>
-                <div className="flex justify-between text-emerald-400">
+                <div className="flex justify-between text-emerald-700">
                   <span>Static Cloud Deployment (GitHub Pages/Vercel):</span>
                   <span className="font-bold">₹0 (Free Forever)</span>
                 </div>
@@ -372,18 +368,17 @@ export default function ScopeEstimator() {
 
               {/* Main Conversion CTAs */}
               <div className="space-y-3">
-                {/* Instant WhatsApp Lead Trigger */}
                 <a
                   href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-4 px-6 rounded-xl font-bold text-xs sm:text-sm text-black bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300 hover:from-emerald-300 hover:to-cyan-200 transition-all flex items-center justify-center gap-2 shadow-xl shadow-emerald-500/20 active:scale-95"
+                  className="btn-gold-satin w-full py-4 px-6 rounded-xl font-bold text-xs sm:text-sm text-[#121316] flex items-center justify-center gap-2 active:scale-95"
                 >
-                  <MessageCircle className="w-4 h-4 fill-black" />
+                  <MessageCircle className="w-4 h-4" />
                   <span>Send Scope to Keshav on WhatsApp</span>
                 </a>
 
-                {/* Claim Technical Blueprint Form / Feedback */}
+                {/* Blueprint Email Intake */}
                 {!isSubmitted ? (
                   <form onSubmit={handleClaimBlueprint} className="mt-3">
                     <div className="flex gap-2">
@@ -393,28 +388,28 @@ export default function ScopeEstimator() {
                         placeholder="Enter email to get architecture blueprint"
                         value={clientEmail}
                         onChange={(e) => setClientEmail(e.target.value)}
-                        className="flex-1 bg-[#090c16] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400"
+                        className="flex-1 bg-[#FAF7F2] border border-[#E8E2D5] rounded-xl px-3.5 py-2.5 text-xs text-[#121316] placeholder-[#A0A5B1] focus:outline-none focus:border-[#B89047]"
                       />
                       <button
                         type="submit"
-                        className="px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-slate-800 hover:bg-slate-700 border border-white/10 transition-colors flex items-center gap-1.5"
+                        className="px-4 py-2.5 rounded-xl text-xs font-semibold text-[#FBF9F5] bg-[#121316] hover:bg-[#1E2129] border border-[#121316] transition-colors flex items-center gap-1.5 cursor-pointer"
                       >
-                        <Send className="w-3.5 h-3.5" />
+                        <Send className="w-3.5 h-3.5 text-[#C5A059]" />
                         <span>Send</span>
                       </button>
                     </div>
                   </form>
                 ) : (
-                  <div className="p-3.5 rounded-xl bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 text-xs font-mono text-center animate-in fade-in">
+                  <div className="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono text-center animate-in fade-in">
                     ✓ Blueprint sent! Keshav Vatsa will follow up within 2 hours.
                   </div>
                 )}
               </div>
 
-              {/* Guarantee Pill */}
-              <div className="mt-6 flex items-center justify-center gap-2 text-[11px] font-mono text-slate-400">
-                <ShieldCheck className="w-4 h-4 text-cyan-400" />
-                <span>100% Code Ownership • No Recurring Vendor Lock-In</span>
+              {/* Guarantee */}
+              <div className="mt-6 flex items-center justify-center gap-2 text-[11px] font-mono text-[#707684]">
+                <ShieldCheck className="w-4 h-4 text-[#B89047]" />
+                <span>100% Code Ownership • Zero Hostage Traps</span>
               </div>
 
             </div>
