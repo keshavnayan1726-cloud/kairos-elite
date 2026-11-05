@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #07080e;
+    --card-dark: #0e111a;
+    --accent-cyan: #00f2fe;
+    --accent-blue: #4facfe;
+    --accent-gold: #e5c158;
+  }
+
+  body {
+    background-color: #07080e;
+    color: #e2e8f0;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  #root {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    border: none;
+    text-align: left;
+    display: block;
+  }
+}
+
+/* Custom glow utilities */
+.glow-cyan {
+  box-shadow: 0 0 35px -5px rgba(0, 242, 254, 0.35);
+}
+
+.glow-gold {
+  box-shadow: 0 0 35px -5px rgba(229, 193, 88, 0.35);
+}
+
+.glow-violet {
+  box-shadow: 0 0 35px -5px rgba(147, 51, 234, 0.35);
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #f9e79f 0%, #d4af37 50%, #aa771c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-panel {
+  background: rgba(14, 18, 30, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(18, 23, 40, 0.85);
+  border-color: rgba(0, 242, 254, 0.25);
+  box-shadow: 0 10px 40px -10px rgba(0, 242, 254, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #07080e;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2538;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f2fe;
+}
