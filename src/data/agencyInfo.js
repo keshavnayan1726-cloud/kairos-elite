@@ -37,7 +37,8 @@ export const AGENCY_CONFIG = {
     email: "keshav@kairoselite.com",
     address: "DLF Phase 1, Gurugram, NCR 122002, India",
     workingHours: "Mon - Sat: 09:00 AM - 09:00 PM IST",
-    githubRepo: "https://github.com/keshav-vatsa/kairos-elite",
+    githubRepo: "https://github.com/keshavnayan1726-cloud/kairos-elite",
+    liveUrl: "https://keshavnayan1726-cloud.github.io/kairos-elite/",
   },
   socialProof: {
     clientCount: "12+",
